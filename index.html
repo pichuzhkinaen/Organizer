@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Organizer</title>
+    <link rel="shortcut icon" href="src/icons/favicon.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="src/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="src/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+    <section class="main">
+        <h1 class="title">Органайзер</h1>
+
+        <section class="calendar">
+            <div type="text" id="datepicker" class="datepicker">
+                <button class="button search_btn"><span>Поиск</span>
+                    <img class="search_img" src="./src/icons/search.png" alt="search">
+                </button>
+            </div>
+        </section>
+    
+        <div class="tasks">
+            <div class="tasks_panel">
+                <button class="button button_add"></button>
+                <button class="button button_rem"></button>
+            </div>
+            <div class="tasks-field">
+                <table id="table" class="table"></table>
+            </div>
+        </div>
+    </section>
+    
+    <section class="overlay">
+        <div class="modal">
+
+            <div id="search" class="modal_search">
+                <input class="modal_search_input"></input>
+                <button class="search_btn modal_search_btn"><span>Найти</span>
+                    <img class="search_img" src="./src/icons/search.png" alt="search">
+                </button>
+                <div class="modal_search_field">
+                    <table id="search-table" class="table"></table>
+                </div>
+            </div>
+ 
+            <div class="modal_remove">
+                <p class="modal_remove-text">Удалить задание?</p>
+                <div class="buttons">
+                    <button class="buttons_ok">Да</button>
+                    <button class="buttons_cancel buttons_cancel-rem">Отмена</button>
+                </div>
+            </div>
+
+            <img class="close" src="src/icons/close.png" alt="close">
+        </div>
+    </section>
+
+    <section class="overlay-task">
+        <div class="modal-task">
+
+            <div class="modal-task_task-window">
+                <div class="date-time">
+                    <p class="date-time_date">Дата: <input type="text" id="datepicker-task"></p>
+                    <p class="date-time_time">Время: <input class="input_timepicker" type="text" data-time-format="H:i" name="input" placeholder="10:00"></p>
+                </div>
+
+                <div class="name">
+                    <input class="name_task" type="text" name="input" placeholder="Название">
+                </div>
+                <textarea class="text-task" name="text" placeholder="Описание"></textarea>
+                <div class="buttons">
+                    <button class="buttons_save">Сохранить</button>
+                    <button id="cancel-task" class="buttons_cancel buttons_cancel-task">Отменить</button>
+                </div>
+            </div>
+
+            <img class="close-task" src="src/icons/close.png" alt="close">
+        </div>
+    </section>
+
+    
+    <script src="src/js/jquery.js"></script>
+    <script src="src/js/jquery-ui.min.js"></script>
+    <script src="src/js/jquery.timepicker.min.js"></script>
+    <script src="src/js/index.js"></script>
+
+</body>
+</html>

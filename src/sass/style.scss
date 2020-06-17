@@ -1,0 +1,413 @@
+*{
+    font-family: 'Manrope', sans-serif;
+}
+
+
+.title {
+    text-align: center;
+    margin: 40px 0 40px 0;
+}
+
+//стрелки переключения месяцев
+.ui-datepicker-prev {
+    display: none;
+}
+.ui-datepicker-next {
+    display: none;
+}
+
+#datepicker {
+    width: 555px;
+    min-height: 294px;
+    margin: 0 auto;
+
+    .ui-datepicker {
+        width: 555px;
+        min-height: 294px;
+        border: none;
+        padding: 0;
+    }
+
+    .button {
+        outline-color: #85898B;
+        outline-color: #85898B;  
+    }
+
+    .search_btn {
+        position: absolute;
+        width: 100px;
+        height: 30px;
+        background-size: 20px;
+        background-color: #fff;
+        border: 1px solid #85898B;
+        z-index: 1;
+        top: 123px;
+    }
+
+    .search_img {
+        width: 20px;
+        height: 20px;
+    }
+
+    //дни недели
+    th {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    //даты
+    td {
+        padding: 0;
+        a {
+            display: inline-block;
+            color: rgb(104, 103, 103);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            border: 1px solid #85898B;
+            background: #fff;
+            &:hover {
+                color: rgb(104, 103, 103);
+                text-decoration: none;
+            }
+        }
+    }
+
+    //при наведении на дату
+    .ui-state-hover {
+        background: rgb(239, 248, 228);
+        border-color: rgb(141, 198, 64);
+    }
+
+    //текущая дата
+    .ui-state-highlight {
+        border: 1px solid #DAD55E;
+        color: rgb(104, 103, 103);
+        background: #FFFA90;
+    }
+    //дата с заданиями
+    .contains-task {
+        color: rgb(141, 198, 64);
+        border-color: rgb(141, 198, 64);
+    }
+
+    //активная дата
+    .ui-state-active {
+        color: #FFFFFF;
+        background: #A4D166;
+        border-color: rgb(141, 198, 64);
+    }
+
+    .ui-datepicker-header {
+        background: #FFFFFF;
+        border: none;  
+        //выпадающий список месяцев
+        .ui-datepicker-month {
+            width: 150px;
+            height: 30px;
+            border: 1px solid #85898B;
+            text-align: right;
+        }
+        //выпадающий список лет
+        .ui-datepicker-year {
+            width: 150px;
+            height: 30px;
+            border: 1px solid #85898B;
+            margin-left: 10px;
+        }
+        .ui-datepicker-title {
+            display: flex;
+            justify-content: flex-end;
+            width: 553px;
+            height: 30px;
+            background: #FFFFFF;
+            margin: 0 auto;
+        }
+    }
+    //блок с календарем
+    .ui-datepicker-calendar {
+        width: 553px;
+        border-spacing: 2px;
+        background-color: #EFEDED;
+        border-collapse: separate;
+        border: 1px solid #85898B;
+        margin: 20px auto 0 auto;
+    }
+}
+
+
+//календарь в модальном окне задачи
+#ui-datepicker-div {
+    
+    .ui-datepicker-buttonpane {
+        display: none;
+    }
+
+    .ui-datepicker-calendar {
+        border-spacing: 2px;
+        background-color: #FFFFFF;
+        border-collapse: separate;
+        border: 1px solid #85898B;
+    }
+
+    td {
+        text-align: center;
+        .ui-state-default {
+            color: rgb(104, 103, 103);
+        }
+        .ui-state-active {
+            color: #FFFFFF;
+            background: #A4D166;
+            border-color: rgb(141, 198, 64);
+        }
+    }
+}
+
+//задачи
+.tasks {
+    width: 553px;
+    height: 254px;
+    background-color: #EFEDED;
+    border: 1px solid #85898B;
+    margin: 0 auto;
+    margin-top: 20px;
+    &_panel {
+        display: flex;
+        justify-content: flex-start;
+        .button {
+            border: 1px solid #85898B;
+            outline-color: #85898B;
+            padding: 5px;
+            width: 28px;
+            height: 28px;
+            &_add {
+                background: url('../icons/plus.png') center (center / cover) no-repeat;
+                background-size: 25px;
+                background-color: #fff;
+                margin: 16px 6px 16px 20px;
+            }
+            &_rem {
+                background: url('../icons/minus.png') center (center / cover) no-repeat;
+                background-size: 25px;
+                background-color: #fff;
+                margin: 16px 6px;
+            }
+        }
+    }
+    .tasks-field {
+        width: 551px;
+        height: 190px;
+        background-color: #fff;
+        border-top: 1px solid #85898B;
+        overflow: auto;
+    }
+}
+
+
+.table {
+    width: 100%;
+    &_string {
+        height: 22px;
+        &_hover {
+            background: rgb(239, 248, 228);
+        }
+        &_active {
+            background: rgb(141, 198, 64);
+        }
+    }
+    &_cell {
+        position: relative;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        border-bottom: 1px solid #85898B;
+        border-right: 1px solid #85898B;
+        padding: 0 20px 0 20px;
+        cursor: pointer;
+        &_search {
+            width: 130px;
+        }
+        &_name {
+            font-size: 16px;
+        }
+        &_descr {
+            margin: 0;
+        }
+        &:nth-child(odd) {
+            width: 390px;
+            text-align: left;
+            border-right: 1px solid #85898B;
+        }
+    }
+}
+
+    
+//модальное окно
+.overlay, .overlay-task {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0,0,0, .7);
+    .modal, .modal-task {
+        display: flex;
+        width: 643px;
+        height: 314px;
+        padding-left: 45px;
+        margin: 30vh auto;
+        .close, .close-task {
+            width: 30px;
+            height: 30px;
+            margin-left: auto;
+            margin-right: 0;
+            cursor: pointer;
+        }
+        &_search {
+            position: absolute;
+            display: none;
+            border: 1px solid #85898B;
+            background-color: #EFEDED;
+            padding: 16px 20px 16px 20px;
+            margin: 15px 0 0 0;
+            &_input {
+                width: 398px;
+                border: 1px solid #85898B;
+                outline-color: #85898B;
+            }
+            &_btn {
+                height: 28px;
+                margin: 0 0 11px 8px;
+                border: 1px solid #85898B;
+                outline-color: #85898B;
+                background: #FFFFFF;
+            }
+            &_field {
+                width: 510px;
+                height: 188px;
+                background-color: #fff;
+                border: 1px solid #85898B;
+                overflow: auto;
+                margin-top: 12px;
+            }
+            .search_img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &_task-window {
+            position: absolute;
+            z-index: 2;
+            display: none;
+            border: 1px solid #85898B;
+            background-color: #EFEDED;
+            padding: 16px 20px 16px 20px;
+            margin: 15px 0 0 0;
+            .date-time {
+                display: flex;
+                &_time {
+                    margin-left: 5px;
+                }
+            }
+            .name {
+                display: flex;
+                justify-content: space-between;
+                font-size: 16px;        
+                line-height: 14px;
+                text-align: center;
+                outline-color: #85898B;
+                &_task {
+                    width: 511px;
+                    background: #fff;
+                    border: 1px solid #85898B;
+                    margin-bottom: 12px;
+                }
+                &_timepicker {
+                    width: 120px;
+                    background: #fff;
+                    border: 1px solid #85898B;
+                    padding-left: 5px;
+                    margin-left: 8px;
+                    margin-bottom: 12px;
+                }
+            }
+            .text-task {
+                width: 511px;
+                height: 150px;
+                border: 1px solid #85898B;
+                background-color: #fff;
+                resize: none;
+            }
+            .buttons {
+                display: flex;
+                width: 80px;
+                height: 30px;
+                font-size: 16px;        
+                line-height: 14px;
+                text-align: center;
+                margin: 0 0 0 317px;
+                &_save {
+                    color: #fff;
+                    background: #8DC640;
+                    outline-color: #8DC640;
+                    border: 1px solid #85898B;
+                }
+                &_cancel {
+                    color: #fff;
+                    background: #FB5151;
+                    outline-color: #FB5151;
+                    border: 1px solid #85898B;
+                    margin-left: 10px;
+                }
+            }
+        }
+        &_remove {
+            display: none;
+            z-index: 3;
+            width: 368px;
+            height: 176px;
+            border: 1px solid #85898B;
+            background-color: #EFEDED;
+            padding: 16px 20px 16px 20px;
+            margin-top: 15px;
+            margin-left: 20%;
+            &-text {
+                font-size: 20px;
+                text-align: center;
+                margin-top: 25px;
+            }
+            .buttons {
+                display: flex;
+                justify-content: center;
+                font-size: 16px;        
+                line-height: 14px;
+                text-align: center;
+                margin: 0 auto;
+                &_ok {
+                    width: 80px;
+                    height: 30px;
+                    color: #fff;
+                    background: #8DC640;
+                    border: 1px solid #85898B;
+                    outline-color: #8DC640;
+                    margin: 10px 10px 0 0;
+                }
+                &_cancel {
+                    width: 80px;
+                    height: 30px;
+                    color: #fff;
+                    background: #FB5151;
+                    border: 1px solid #85898B;
+                    outline-color: #FB5151;
+                    margin: 10px 10px 0 0;
+                }
+            }
+        }
+    }
+}
